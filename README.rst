@@ -1,3 +1,6 @@
+.. image:: https://travis-ci.org/ViderumGlobal/ckanext-sentry.svg?branch=master
+    :target: https://travis-ci.org/ViderumGlobal/ckanext-sentry
+
 Sentry CKAN extension
 ======================
 

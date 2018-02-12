@@ -1,3 +1,9 @@
+.. image:: https://travis-ci.org/ViderumGlobal/ckanext-sentry.svg?branch=master
+    :target: https://travis-ci.org/ViderumGlobal/ckanext-sentry
+
+.. image:: https://coveralls.io/repos/github/ViderumGlobal/ckanext-sentry/badge.svg?branch=master
+    :target: https://coveralls.io/github/ViderumGlobal/ckanext-sentry?branch=master
+
 Sentry CKAN extension
 ======================
 

@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 import os
 import logging
 
-from raven.contrib.pylons import Sentry
+from raven.contrib.flask import Sentry
 from raven.handlers.logging import SentryHandler
 
 
@@ -44,7 +44,8 @@ class SentryPlugin(plugins.SingletonPlugin):
             self._configure_logging(config)
 
         log.debug('Adding Sentry middleware...')
-        return Sentry(app, config)
+        Sentry(app, dsn=config.get('sentry.dsn'))
+        return app
 
     def _configure_logging(self, config):
         '''

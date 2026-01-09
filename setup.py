@@ -4,8 +4,6 @@ import re
 
 from setuptools import setup, find_packages
 
-from ckanext.sentry import __version__, __description__
-
 RE_REQUIREMENT = re.compile(r'^\s*-r\s*(?P<filename>.*)$')
 
 PYPI_RST_FILTERS = (
@@ -35,6 +33,9 @@ long_description = '\n'.join((
     rst('README.rst'),
     ''
 ))
+
+__version__ = '0.0.2'
+__description__ = 'Sentry support for CKAN'
 
 setup(
     name='ckanext-sentry',

@@ -34,7 +34,7 @@ long_description = '\n'.join((
     ''
 ))
 
-__version__ = '0.0.3'
+__version__ = rst('VERSION').strip()
 __description__ = 'Sentry support for CKAN'
 
 setup(

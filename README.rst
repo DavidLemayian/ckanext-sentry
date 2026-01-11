@@ -40,7 +40,7 @@ You must provide a Sentry DSN::
 
     sentry.dsn = https://xxxxxx:xxxxxx@sentry.domain.com/1
 
-You can see a full list of supported options for the Sentry client on the `official Raven documentation`_.
+You can see a full list of supported options for the Sentry client on the `official SDK documentation`_.
 
 If you want Sentry to record your log messages, you can turn it on adding the following options::
 
@@ -57,9 +57,6 @@ All these configuration options can also be passed via environment variables:
 
 The configuration also supports env vars named like the `ckanext-envvars`_ extension convention (eg ``CKAN___SENTRY__LOG_LEVEL``).
 
-
-
-
-.. _Sentry: http://getsentry.com/
-.. _official Raven documentation: http://raven.readthedocs.org/en/latest/advanced.html#configuring-the-client
+.. _Sentry: https://sentry.io/
+.. _official SDK documentation: https://docs.sentry.io/platforms/python/
 .. _ckanext-envvars: https://github.com/okfn/ckanext-envvars

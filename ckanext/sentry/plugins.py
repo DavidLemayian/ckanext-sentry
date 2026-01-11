@@ -4,9 +4,7 @@ from __future__ import unicode_literals
 import os
 import logging
 
-from raven.contrib.flask import Sentry
-from raven.handlers.logging import SentryHandler
-
+import sentry_sdk
 
 from ckan import plugins
 
@@ -15,7 +13,7 @@ log = logging.getLogger(__name__)
 
 
 CONFIG_FROM_ENV_VARS = {
-    'sentry.dsn': 'CKAN_SENTRY_DSN',  # Alias for SENTRY_DSN, used by raven
+    'sentry.dsn': 'CKAN_SENTRY_DSN',  # Alias for SENTRY_DSN, used by sentry-sdk
     'sentry.configure_logging': 'CKAN_SENTRY_CONFIGURE_LOGGING',
     'sentry.log_level': 'CKAN_SENTRY_LOG_LEVEL',
 }
@@ -44,7 +42,9 @@ class SentryPlugin(plugins.SingletonPlugin):
             self._configure_logging(config)
 
         log.debug('Adding Sentry middleware...')
-        Sentry(app, dsn=config.get('sentry.dsn'))
+        sentry_sdk.init(
+            dsn=config.get('sentry.dsn'),
+        )
         return app
 
     def _configure_logging(self, config):
